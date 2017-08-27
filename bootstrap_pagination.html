@@ -1,0 +1,46 @@
+{% if is_paginated %}
+<div class="text-center">
+	<div class="pagination" style="text-align:center;">
+		<ul class="pagination pagination-sm">
+
+			{% if page_obj.has_previous %}
+				{% if request.get_full_path %}
+				<li><a href="{{ request.get_full_path }}&page={{ page_obj.previous_page_number }}">Prev</a></li>
+				{% else %}
+				<li><a href="?page={{ page_obj.previous_page_number }}">Prev</a></li>	
+				{% endif %}
+			{% else %}
+				{% if request.get_full_path %}
+				<li><a href="{{ request.get_full_path }}&page=1" disabled="disabled">Prev</a></li>
+				{% else %}	
+				<li><a href="?page=1" disabled="disabled">Prev</a></li>
+				{% endif %}
+			{% endif %} 
+			{% for i in page_obj.paginator.page_range %} 
+				{% if page_obj.has_next %}
+				
+					{% if request.get_full_path %}
+					<li {% if i == page_obj.number %}class="active"{% endif %}><a href="{{ request.get_full_path }}&page={{i}}">{{i}}</a></li>
+					{% else %}
+					<li {% if i == page_obj.number %}class="active"{% endif %}><a href="?page={{i}}">{{i}}</a></li>	
+					{% endif %}
+				{% endif %} 
+			{% endfor %} 
+			{% if page_obj.has_next %}
+				{% if request.get_full_path %}
+				<li><a href="{{ request.get_full_path }}&page={{ page_obj.next_page_number }}">Next</a></li>	
+				{% else %}
+				<li><a href="?page={{ page_obj.next_page_number }}">Next</a></li>	
+				{% endif %}
+			{% else %}
+				{% if request.get_full_path %}
+				<li><a href="{{ request.get_full_path }}&page={{ paginator.num_pages }}" disabled="disabled">Next</a></li>
+				{% else %}
+				<li><a href="?page={{ paginator.num_pages }}" disabled="disabled">Next</a></li>	
+				{% endif %}
+			{% endif %}
+		</ul>
+	</div>
+</div>
+{% endif %}
+
