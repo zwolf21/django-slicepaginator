@@ -1,6 +1,7 @@
 # django-slicepaginator
 
 Slice page range of default django paginator
+
 Tested on python3.4, django==1.6.5
 
 Installation
