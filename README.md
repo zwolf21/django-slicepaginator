@@ -4,7 +4,10 @@ Slice page range of default django paginator
 Tested on python3.4, django==1.6.5
 
 Installation
+
     pip install django-slicepaginator
+
+Usage
 
     # views.py
     from django.views.generic import ListView
