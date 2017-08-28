@@ -27,9 +27,9 @@ Then, use page number iteration in templates code, via
 
 - page_obj.paginator.page_range
 
-    
-    
-    # somemodel_list.html
+
+
+    #somemodel_list.html
     
     ...
     {% for i in page_obj.paginator.page_range %} # page_range is limitted by 10!!
