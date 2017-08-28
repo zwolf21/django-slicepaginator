@@ -24,7 +24,7 @@ Usage
         
         ...
     
-Then, use in templates code, via
+Then, use page number iteration in templates code, via
 
     page_obj.paginator.page_range    
     
