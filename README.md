@@ -20,7 +20,7 @@ Usage
     class SomeListView(SlicePaginatorMixin, ListView):
         model = somemodel
         paginate_by = 10
-        slice_count = 10  # Limit count of page_range,  If skip it, default to 10
+        slice_count = 10  # Limit count of page_range,  If skip it, default to 10
         ...
 
 Then, use page number iteration in templates code, via
